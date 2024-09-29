@@ -15,5 +15,5 @@ export const routes: Routes = [
     {path: "detalhe", component:DetalheComponent},
     {path: "cesta", component:CestaComponent},
     {path: "cadastro", component:CadastroComponent},
-    {path: "busca", component:BuscaComponent},
+    {path: "busca", component:BuscaComponent}
 ];
