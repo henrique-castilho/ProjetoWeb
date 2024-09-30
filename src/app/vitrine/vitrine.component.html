@@ -7,7 +7,7 @@
         <h4>{{item.nome}}</h4>
         <p>R$ {{item.valor.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}}</p>
         <button class="btnDetalhe" (click)="detalhe(item)">Ver Detalhes</button>
-        <button class="btnAddCarrinho" *ngIf="item.quantidade" (click)="adicionaCarrinho(item)">Adicionar ao carrinho</button>
+        <button class="btnAddCarrinho" *ngIf="item.quantidade" (click)="adicionaCarrinho(item)">Comprar</button>
         </div>
     </div>
 </div>
