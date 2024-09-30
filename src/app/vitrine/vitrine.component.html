@@ -1,1 +1,13 @@
-<p>vitrine works!</p>
+<div class="vitrine">
+    <h2 class="mensagem">{{mensagem}}</h2>
+    <h4 *ngIf="lista.length <= 0">Não existe nenhum produto na vitrine</h4>
+    <div class="box-produtos">
+      <div class="itens-produtos" *ngFor="let item of lista">
+        <img src="./{{item.codigo}}.jpg" alt="{{item.nome}}" width="200" (click)="detalhe(item)">
+        <h4>{{item.nome}}</h4>
+        <p>R$ {{item.valor.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}}</p>
+        <button class="btnDetalhe" (click)="detalhe(item)">Ver Detalhes</button>
+        <button class="btnAddCarrinho" *ngIf="item.quantidade" (click)="adicionaCarrinho(item)">Adicionar ao carrinho</button>
+        </div>
+    </div>
+</div>
