@@ -1,1 +1,14 @@
-<p>esqueci works!</p>
+<div class="container-esqueci">
+    <div class="formulario">
+        <h2>Esqueceu sua senha?</h2> 
+        <h2>Enviaremos um Email com instruções para a redefinição de senha</h2>
+        <b class="mensagem">{{mensagem}}</b>
+        <form>
+            <div class="input">
+                <label>E-mail</label>
+                <input type="email" [(ngModel)]="obj.email">
+            </div>
+            <button  class="botao" (click)="reenviarIntrucoes()">Enviar</button>
+        </form>
+    </div>
+</div>
