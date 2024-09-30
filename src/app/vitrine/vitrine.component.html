@@ -6,8 +6,8 @@
         <img src="./{{item.codigo}}.jpg" alt="{{item.nome}}" width="200" (click)="detalhe(item)">
         <h4>{{item.nome}}</h4>
         <p>R$ {{item.valor.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}}</p>
-        <button class="btnDetalhe" (click)="detalhe(item)">Ver Detalhes</button>
-        <button class="btnAddCarrinho" *ngIf="item.quantidade" (click)="adicionaCarrinho(item)">Comprar</button>
+        <button class="botaoDetalhe" (click)="detalhe(item)">Ver Detalhes</button>
+        <button class="botaoAddCarrinho" *ngIf="item.quantidade" (click)="adicionaCarrinho(item)">Comprar</button>
         </div>
     </div>
 </div>
