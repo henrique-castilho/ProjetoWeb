@@ -12,13 +12,13 @@ import { CommonModule } from '@angular/common';
 })
 export class EsqueciComponent {
   public mensagem: string = "";
-  public obj: Cliente = new Cliente();
+  public user: Cliente = new Cliente();
 
   public reenviarIntrucoes(){
-    if(this.obj.email === "") {
-      this.mensagem = "O campo e-mail é obrigatorio.";
+    if(this.user.email == "") {
+      this.mensagem = "O campo email é obrigatorio.";
     } else {
-      this.mensagem ="as intruções foram enviadas para o e-mail: " + this.obj.email;
+      this.mensagem ="As intruções foram enviadas para o email: " + this.user.email;
     }
   }
 }
