@@ -15,13 +15,17 @@ export class CadastroComponent {
   public user: Cliente = new Cliente()
 
   public gravar(){
-    if (this.user.nome != "" && this.user.email != "" && this.user.documento != "" && this.user.telefone != "" &&
-      this.user.logradouro != "" && this.user.cep != "" && this.user.cidade != "" && this.user.senha != ""
-    ) {
-      localStorage.setItem("cliente", JSON.stringify(this.user))
-      this.mensagem = "Cadastro atualizado/feito com sucesso!"
+    if (this.user.nome != "" && this.user.email != "" && this.user.documento != "" && this.user.telefone != "" && this.user.logradouro != "" 
+        && this.user.cep != "" && this.user.cidade != "" && this.user.senha != "" && this.user.confirmar != "") 
+      {
+     if(this.user.senha === this.user.confirmar) {
+      localStorage.setItem("cadastro", JSON.stringify(this.user));
+      this.mensagem = "Cadastro atualizado/feito com sucesso!";
+     } else {
+      this.mensagem = "Senhas diferentes foram inseridas"
+     }
     } else {
-      this.mensagem = "Preencha todos os campos para realizar o cadastro ou atualiza"
+      this.mensagem = "Preencha todos os campos para realizar o cadastro ou atualizá-lo"
     }
   }
   
