@@ -5,5 +5,5 @@
     <p>{{item.descritivo}}</p>
     <div class="valor">R$ {{item.valor.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}}</div>
     <button *ngIf="item.quantidade > 0" (click)="adicionaCarrinho(item)">Comprar</button>
-    <div *ngIf="item.quantidade <= 0">Sem estoque</div>
+    <div class="sem-estoque" *ngIf="item.quantidade <= 0">Sem estoque</div>
 </div>
