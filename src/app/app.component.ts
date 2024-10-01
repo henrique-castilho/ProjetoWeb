@@ -9,5 +9,22 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'ProjetoWeb';
+  AbreMenu = false;
+  title = 'Purely Home';
+  
+  public Cadastro() {
+    window.location.href = "./cadastro";
+  }
+
+  public Cesta() {
+    window.location.href = "./cesta"
+  }
+
+  public Vitrine() {
+    window.location.href = "./vitrine"
+  }
+
+  public Menu() {
+    this.AbreMenu = !this.AbreMenu;
+  }
 }
