@@ -5,6 +5,7 @@
     background-color: #f9f9f9;
     padding: 20px;
     margin: 20px auto;
+    margin-top: 170px;
     border-radius: 10px;
     max-width: 600px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -26,6 +27,7 @@
 
 
 .container-detalhe p {
+    background-color: #f9f9f9;
     font-size: 16px;
     font-weight: bold;
     color: #666;
@@ -35,6 +37,7 @@
 
 
 .valor {
+    background-color: #f9f9f9;
     font-size: 20px;
     color: #28a745;
     font-weight: bold;
