@@ -40,16 +40,12 @@
     margin-bottom: 10px;
 }
 
-.itens-produtos h4 {
-    font-size: 18px;
+.itens-produtos h4, .itens-produtos p {
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
     color: #333;
-    margin: 10px 0;
-}
-
-.itens-produtos p {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 10px;
 }
 
 .botaoDetalhe, .botaoAddCarrinho {
