@@ -19,7 +19,7 @@ export class LoginComponent {
       localStorage.setItem("cadastro", JSON.stringify(this.user))
       window.location.href="./cadastro"
     } else {
-      this.mensagem = "Email ou senha ivalidos !!"
+      this.mensagem = "Email ou senha inválidos!"
       localStorage.removeItem("cadastro")
     }
   }
