@@ -1,5 +1,4 @@
 .login, .cesta, .vitrine {
-    padding: 16px;
     margin-right: 20px;
     font-size: 20px;
     cursor: pointer;
@@ -38,9 +37,12 @@
 }
 
 
-@media (max-width: 768px) {
+@media (orientation: portrait) {
     .menu-sanduiche {
-        display: block;
+        display:flex;
+        margin-top: 10px;
+        margin-right: -11px;
+
     }
 
     .login, .cesta, .vitrine {
@@ -57,6 +59,61 @@
     .menu-icones.open {
         right: -10px;
         align-items: center;
+        margin-top: 15px;
     }
-    
+
+}
+
+@media (max-width: 1000px ) {
+    .menu-sanduiche {
+        display:flex;
+        margin-top: 8px;
+        margin-right: 20px;
+
+    }
+
+    .login, .cesta, .vitrine {
+        display: none;
+    }
+
+    .menu-icones.open .login, 
+    .menu-icones.open .cesta, 
+    .menu-icones.open .vitrine {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .menu-icones.open {
+        right: -10px;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+}
+
+
+@media (min-width: 1280px ) {
+    .menu-sanduiche {
+        display:flex;
+        margin-top: 3px;
+        margin-right: 20px;
+
+    }
+
+    .login, .cesta, .vitrine {
+        display: none;
+    }
+
+    .menu-icones.open .login, 
+    .menu-icones.open .cesta, 
+    .menu-icones.open .vitrine {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .menu-icones.open {
+        right: -10px;
+        align-items: center;
+        margin-top: 15px;
+    }
 }
