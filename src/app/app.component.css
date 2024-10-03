@@ -92,7 +92,7 @@
 }
 
 
-@media (min-width: 1280px ) {
+@media (max-width: 1280px ) {
     .menu-sanduiche {
         display:flex;
         margin-top: 3px;
