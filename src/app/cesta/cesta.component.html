@@ -1,1 +1,24 @@
-<p>cesta works!</p>
+<h1>Carrinho de Compras</h1>
+<h3>{{mensagem}} </h3>
+
+<table border="3">
+    <tr>
+        <td>Cod.</td>
+        <td>nome</td>
+        <td>Qtd</td>
+        <td>valor R$</td>
+        <td>total por item R$</td>
+    </tr>
+    
+    <tr *ngFor="let x of cesta.itens">
+        <td>{{x.codigo}}</td>
+        <td>{{x.produto.nome}}</td>
+        <td>{{x.quantidade}}</td>
+        <td>{{x.produto.valor}}</td>
+        <td>{{x.valor}} </td>
+        <td><button (click)="excluiItens(x)">x</button></td>
+    </tr>
+    <tr><td colspan="4">Valor Total</td><td>R$ {{cesta.total}}</td></tr>
+</table>
+<button (click)="esvaziaCarrinho()">Esvaziar</button>
+<button>Finalizar Compra</button>
