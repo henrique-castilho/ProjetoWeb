@@ -3,7 +3,7 @@
     <h3>{{item.nome}}</h3>
     <img src="./{{item.codigo}}.jpg" width="250" alt="{{item.nome}}">
     <p>{{item.descritivo}}</p>
-    <div class="valor">R$ {{item.valor | currency: 'BRL':'symbol':'1.2-2'}}</div>
+    <div class="valor">{{item.valor | currency: 'BRL':'symbol':'1.2-2'}}</div>
     <button *ngIf="item.quantidade > 0" (click)="adicionaCarrinho(item)">Comprar</button>
     <div class="sem-estoque" *ngIf="item.quantidade <= 0">Sem estoque</div>
 </div>
