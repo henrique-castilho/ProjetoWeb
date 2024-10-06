@@ -68,3 +68,15 @@
     margin-top: 15px;
     text-align: center;
 }
+
+@media (orientation: portrait) {
+    .detalhe {
+        margin-top: 50px;
+    }
+}
+
+@media (orientation: landscape) {
+    .detalhe {
+        margin-top: 50px;
+    }
+}
