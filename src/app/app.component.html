@@ -1,19 +1,2 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-<div class="menu-sanduiche" (click)="Menu()">
-    <i class="fa-solid fa-bars"></i>
-</div>
-
-<div class="menu-icones" [class.open]="AbreMenu">
-    <div class="vitrine">
-        <i class="fa-solid fa-house" (click)="Vitrine()"></i>
-    </div>
-    <div class="login">
-        <i class="fa-solid fa-user" (click)="Cadastro()"></i>
-    </div>
-    <div class="cesta">
-        <i class="fa-solid fa-cart-shopping" (click)="Cesta()"></i>
-    </div>
-</div>
-
+<app-header></app-header>
 <router-outlet />
