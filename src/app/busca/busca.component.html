@@ -1,1 +1,15 @@
-<p>busca works!</p>
+<div class="vitrine">
+    <h2 class="mensagem">{{mensagem}}</h2>
+    <h4 *ngIf="lista.length <= 0">Não existe nenhum produto na vitrine</h4>
+    <div class="box-produtos">
+        <ng-container *ngFor="let item of lista">
+            <div class="itens-produtos" *ngIf="item.keywords.toLowerCase().indexOf(filtro.toLowerCase()) >= 0">
+                <img src="./{{item.codigo}}.jpg" alt="{{item.nome}}" width="200" (click)="detalhe(item)">
+                <h4>{{item.nome}}</h4>
+                <p>{{item.valor | currency: 'BRL':'symbol':'1.2-2'}}</p>
+                <button class="botaoDetalhe" (click)="detalhe(item)">Ver Detalhes</button>
+                <button class="botaoAddCarrinho" *ngIf="item.quantidade" (click)="adicionaCarrinho(item)">Adicionar ao carrinho</button>
+            </div>
+        </ng-container>
+    </div>
+</div>
