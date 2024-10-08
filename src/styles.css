@@ -29,6 +29,8 @@ header {
     margin-left: 20px;
     margin-right: 20px;
     position: relative;
+    display: flex;
+    padding: 5px;
 }
 
 .search-bar input {
@@ -36,6 +38,11 @@ header {
     padding: 8px 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+.icon-lupa {
+    margin-left: auto;
+    color: rgb(0, 0, 0);
 }
 
 .menu {
@@ -59,6 +66,98 @@ header {
     background-color: #575757;
 }
 
+.login, .cesta, .vitrine {
+    margin-right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+}
+
+.menu-sanduiche {
+    font-size: 25px;
+    cursor: pointer;
+    color: rgb(14, 13, 13);
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: none;
+}
+
+.menu-icones {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: 0;
+}
+
+.menu-icones.open {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+}
+
+.menu-icones i:hover {
+    color: #28a745;
+}
+
+
+/* Responsividade para telas menores que 1000px */
+@media (max-width: 1000px) {
+    .menu-sanduiche {
+        display: flex;
+        margin-top: 8px;
+        margin-right: 20px;
+    }
+
+    .login, .cesta, .vitrine {
+        display: none;
+    }
+
+    .menu-icones.open .login,
+    .menu-icones.open .cesta,
+    .menu-icones.open .vitrine {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .menu-icones.open {
+        right: -10px;
+        align-items: center;
+        margin-top: 15px;
+    }
+}
+
+/* Responsividade para telas menores que 1280px */
+@media (max-width: 1280px) {
+    .menu-sanduiche {
+        display: flex;
+        margin-top: 3px;
+        margin-right: 20px;
+    }
+
+    .login, .cesta, .vitrine {
+        display: none;
+    }
+
+    .menu-icones.open .login,
+    .menu-icones.open .cesta,
+    .menu-icones.open .vitrine {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .menu-icones.open {
+        right: -10px;
+        align-items: center;
+        margin-top: 15px;
+    }
+}
+
+/* Modo portrait */
 @media (orientation: portrait) {
     header {
         padding: 20px;
@@ -73,12 +172,36 @@ header {
         margin-left: -10px;
     }
 
-    .search-bar input {
-        margin-left: -5%;
+    .icon-lupa {
+        margin-right: 20px;
+    }
+
+    .menu-sanduiche {
+        display: flex;
+        margin-top: 10px;
+        margin-right: 20px;
+    }
+
+    .login, .cesta, .vitrine {
+        display: none;
+    }
+
+    .menu-icones.open .login,
+    .menu-icones.open .cesta,
+    .menu-icones.open .vitrine {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .menu-icones.open {
+        right: -10px;
+        align-items: center;
+        margin-top: 15px;
     }
 }
 
-@media (max-width: 1480px){
+/* Responsividade para telas menores que 1480px */
+@media (max-width: 1480px) {
     .logo {
         margin-left: 15px;
     }
@@ -86,6 +209,4 @@ header {
     .search-bar input {
         max-width: 90%;
     }
-
-
-} 
+}
