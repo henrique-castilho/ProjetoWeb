@@ -16,7 +16,7 @@ export class CadastroComponent {
 
   public gravar(){
     if (this.user.nome != "" && this.user.email != "" && this.user.documento != "" && this.user.telefone != "" && this.user.logradouro != "" 
-        && this.user.cep != "" && this.user.cidade != "" && this.user.senha != "" && this.user.confirmar != "") 
+        && this.user.cep != "" && this.user.cidade != "" && this.user.uf != "" && this.user.senha != "" && this.user.confirmar != "") 
       {
      if(this.user.senha === this.user.confirmar) {
       localStorage.setItem("cadastro", JSON.stringify(this.user));
