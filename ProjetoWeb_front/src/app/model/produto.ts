@@ -5,4 +5,5 @@ export class Produto {
     public valor: number = 0;
     public quantidade: number = 0;
     public keywords: string = "";
+    public destaque: number = 0;
 }
