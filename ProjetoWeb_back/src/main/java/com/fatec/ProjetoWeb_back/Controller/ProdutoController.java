@@ -63,9 +63,7 @@ public class ProdutoController {
     }
 
     @GetMapping("/api/produto/busca/{palavraChave}")
-    public List<Produto> fazerBusca(@PathVariable("palavraChave")String palavraChave) {
-        return bd.fazerBusca(palavraChave);
+    public List<Produto> fazerBusca(@PathVariable String palavraChave) {
+        return bd.fazerBusca("%" + palavraChave + "%");
     }
-   
-
 }
