@@ -1,9 +1,11 @@
 package com.fatec.ProjetoWeb_back.Controller;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,21 +17,22 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fatec.ProjetoWeb_back.Entity.Produto;
 import com.fatec.ProjetoWeb_back.Repository.ProdutoRepository;
 
+@CrossOrigin(origins = "*")
 @RestController
 public class ProdutoController {
     @Autowired
     ProdutoRepository bd;
 
     @PostMapping("/api/produto")
-    public String gravar(@RequestBody Produto obj) {
+    public Map<String, String> gravar(@RequestBody Produto obj) {
         bd.save(obj);
-        return "O produto " + obj.getNome() + "foi salvo corretamente";
+        return Map.of("mensagem","O produto " + obj.getNome() + " foi salvo corretamente");
     }
 
     @PutMapping("/api/produto")
-    public String alterar(@RequestBody Produto obj) {
+    public Map<String, String> alterar(@RequestBody Produto obj) {
         bd.save(obj);
-        return "O produto " + obj.getNome() + " foi alterado corretamente";
+        return Map.of("mensagem","O produto " + obj.getNome() + " foi alterado corretamente");
     }
 
     @GetMapping("/api/produto/{codigo}")
@@ -43,12 +46,12 @@ public class ProdutoController {
     }
 
      @DeleteMapping("/api/produto/{codigo}")
-    public String remover(@PathVariable int codigo) {
+    public Map<String, String> remover(@PathVariable int codigo) {
         if (bd.existsById(codigo)) {
             bd.deleteById(codigo);
-            return "Registro " + codigo + " removido com sucesso!";
+            return null;
         } else {
-            return "Produto não encontrado";
+            return Map.of("mensagem","Produto não encontrado");
         }
     }
 
@@ -62,8 +65,8 @@ public class ProdutoController {
         return bd.listarVitrine();
     }
 
-    @GetMapping("/api/produto/busca/{palavraChave}")
-    public List<Produto> fazerBusca(@PathVariable String palavraChave) {
-        return bd.fazerBusca("%" + palavraChave + "%");
+    @GetMapping("/api/produto/busca/{termo}")
+    public List<Produto> fazerBusca(@PathVariable String termo) {
+        return bd.fazerBusca("%" + termo + "%");
     }
 }
