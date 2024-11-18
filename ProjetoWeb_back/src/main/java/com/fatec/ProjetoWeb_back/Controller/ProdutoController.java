@@ -51,7 +51,7 @@ public class ProdutoController {
             return Map.of("mensagem","Erro: Todo os campos devem ser preenchidos e com valores válidos");
         }
         bd.save(obj);
-        return Map.of("mensagem","O produto " + obj.getNome() + " foi salvo corretamente");
+        return Map.of("mensagem","O produto " + obj.getNome() + " \nfoi salvo corretamente");
     }
 
     @PutMapping("/api/produto")
@@ -60,7 +60,7 @@ public class ProdutoController {
             return Map.of("mensagem","Erro: Todo os campos devem ser preenchidos e com valores válidos");
         }
         bd.save(obj);
-        return Map.of("mensagem","O produto " + obj.getNome() + " foi alterado corretamente");
+        return Map.of("mensagem","O produto " + obj.getNome() + " \nfoi alterado corretamente");
     }
 
     @GetMapping("/api/produto/{codigo}")
