@@ -1,6 +1,6 @@
 <div class="vitrine">
     <h2 class="mensagem">{{mensagem}}</h2>
-    <h4 *ngIf="lista.length <= 0">Não existe nenhum produto na vitrine</h4>
+    <h4 *ngIf="lista.length <= 0">Não existe nenhum produto na loja</h4>
     <div class="box-produtos">
       <div class="itens-produtos" *ngFor="let item of lista">
         <img src="./{{item.codigo}}.jpg" alt="{{item.nome}}" width="200" (click)="detalhe(item)">
