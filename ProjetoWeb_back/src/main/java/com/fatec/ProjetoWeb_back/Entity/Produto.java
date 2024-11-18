@@ -1,9 +1,11 @@
 package com.fatec.ProjetoWeb_back.Entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 
 @Entity
 public class Produto {
@@ -11,6 +13,8 @@ public class Produto {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int codigo;
     private String nome;
+    @Lob
+    @Column(columnDefinition = "LONGTEXT")
     private String descritivo;
     private double valor;
     private int quantidade;
