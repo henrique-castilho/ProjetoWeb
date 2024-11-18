@@ -11,9 +11,9 @@ import com.fatec.ProjetoWeb_back.Entity.Produto;
 @Repository
 public interface ProdutoRepository extends JpaRepository<Produto, Integer>{
     
-    @Query(value = "SELECT * FROM produto WHERE destaque > 0", nativeQuery = true)
+    @Query(value = "SELECT * FROM produto WHERE destaque > 0 ORDER BY destaque DESC", nativeQuery = true)
     List<Produto> listarVitrine();
-
+    
     @Query(value = "SELECT * FROM produto WHERE keywords LIKE ?1 order by nome", nativeQuery = true)
     List<Produto> fazerBusca(String termo);
 }
