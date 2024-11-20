@@ -1,6 +1,6 @@
 <div class="vitrine">
-    <h2 class="mensagem">{{mensagem}}</h2>
-    <h4 *ngIf="lista.length <= 0">Não existe nenhum produto na vitrine</h4>
+    <h2 class="mensagem"[innerHTML]="mensagem"></h2>
+    <h4 *ngIf="lista.length <= 0">Não existe nenhum produto com esssa palavra</h4>
     <div class="box-produtos">
         <ng-container *ngFor="let item of lista">
             <div class="itens-produtos" *ngIf="item.keywords.toLowerCase().indexOf(filtro.toLowerCase()) >= 0">
