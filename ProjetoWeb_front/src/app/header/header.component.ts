@@ -17,11 +17,10 @@ export class HeaderComponent {
 
   Buscar() {
     if (this.filtro.trim()) {
-      this.router.navigate(['/busca'], { queryParams: { q: this.filtro } })
+      this.router.navigate(['/busca'], { queryParams: { q: this.filtro } });
     }
   }
-
-
+  
   public Cadastro() {
     window.location.href = "./cadastro";
   }
