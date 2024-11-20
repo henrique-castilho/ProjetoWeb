@@ -32,8 +32,7 @@ export class VitrineComponent {
   }
 
   public detalhe(item:Produto){
-    localStorage.setItem("produto", JSON.stringify(item))
-    window.location.href="./detalhe";
+    window.location.href = `/detalhe/${item.codigo}`;
   }
 
   public adicionaCarrinho(obj: Produto) {
