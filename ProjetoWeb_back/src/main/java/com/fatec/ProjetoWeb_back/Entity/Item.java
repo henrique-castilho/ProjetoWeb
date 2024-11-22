@@ -4,31 +4,31 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Transient;
 
 @Entity
 public class Item {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO) 
     private int codigo;
-    @ManyToOne
-    @JoinColumn(name = "produto_codigo", nullable = false)
+    private int codigoProduto;
+    private int codigoCesta = 0;
+    @Transient
     private Produto produto = new Produto();
-    @ManyToOne
-    @JoinColumn(name = "cesta_codigo", nullable = false)
-    private Cesta cesta = new Cesta();
-    private int quantidade;
-    private double valor;
+    private int quantidade = 0;
+    private double valor = 0;
 
-    public Item(int codigo, Produto produto, int quantidade, double valor) {
-        this.codigo = codigo;
-        this.produto = produto;
-        this.quantidade = quantidade;
-        this.valor = valor;
+
+    public int getCodigoCesta() {
+        return codigoCesta;
     }
+    public void setCodigoCesta(int codigoCesta) {
+        this.codigoCesta = codigoCesta;
+    }   
 
-    public Item() {}
+    public int getCodigoProduto() {
+        return codigoProduto;
+    }
 
     public int getCodigo() {
         return codigo;
@@ -44,6 +44,7 @@ public class Item {
 
     public void setProduto(Produto produto) {
         this.produto = produto;
+        this.codigoProduto = produto.getCodigo();
     }
 
     public int getQuantidade() {
@@ -61,4 +62,5 @@ public class Item {
     public void setValor(double valor) {
         this.valor = valor;
     }
+
 }
