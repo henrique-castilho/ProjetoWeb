@@ -4,6 +4,7 @@ import { Cliente } from "./cliente";
 export class Cesta {
     public codigo: number = 0;
     public cliente: Cliente = new Cliente();
+    public codigoCliente: number = 0;
     public total: number = 0;
     public itens: Item[] = [];
 }
