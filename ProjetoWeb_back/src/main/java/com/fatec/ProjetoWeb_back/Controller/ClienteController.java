@@ -55,6 +55,12 @@ public class ClienteController {
         if (!obj.getSenha().equals(obj.getConfirmar())) {
             return Map.of("mensagem", "Erro: A senha e a confirmação da senha devem ser iguais.");
         }
+
+        
+        Optional<Cliente> clienteExistente = bd.findByEmailDocumento(obj.getEmail(), obj.getDocumento());
+        if (clienteExistente.isPresent() && clienteExistente.get().getCodigo() != obj.getCodigo()) {
+            return Map.of("mensagem", "Erro: Cliente já cadastrado com as mesmas informações");
+        }
     
         Optional<Cliente> clienteExiste = bd.findById(obj.getCodigo());
         if (!clienteExiste.isPresent()) {
