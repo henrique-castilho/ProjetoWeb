@@ -21,6 +21,14 @@ export class VitrineComponent {
     this.carregarListaProduto();
   }
 
+  ngOnInit(): void {
+    const mensagemLogin = localStorage.getItem("loginMessage");
+    if (mensagemLogin) {
+      alert(mensagemLogin);
+      localStorage.removeItem("loginMessage");
+    }
+  }
+
   carregarListaProduto(){
     this.service.listarVitrine().subscribe({
       next:(data)=>{
