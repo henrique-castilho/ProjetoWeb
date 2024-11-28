@@ -21,8 +21,13 @@ export class HeaderComponent {
     }
   }
   
-  public Cadastro() {
-    window.location.href = "./cadastro";
+  public irParaCliente() {
+    const clienteLogado = localStorage.getItem('cliente');
+    if (!clienteLogado) {
+      this.router.navigate(['/login']); 
+    } else {
+      this.router.navigate(['/cliente-logado']);
+    }
   }
 
   public Cesta() {
