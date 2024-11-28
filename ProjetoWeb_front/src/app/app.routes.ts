@@ -8,6 +8,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { BuscaComponent } from './busca/busca.component';
 import { ControleClienteComponent } from './controle-cliente/controle-cliente.component';
 import { ControleProdutoComponent } from './controle-produto/controle-produto.component';
+import { ClienteLogadoComponent } from './cliente-logado/cliente-logado.component';
 
 export const routes: Routes = [
     {path: "", component:VitrineComponent},
@@ -19,5 +20,6 @@ export const routes: Routes = [
     {path: "cadastro", component:CadastroComponent},
     {path: "busca", component:BuscaComponent},
     {path: "controle-cliente", component:ControleClienteComponent},
-    {path: "controle-produto", component:ControleProdutoComponent}
+    {path: "controle-produto", component:ControleProdutoComponent},
+    {path: "cliente-logado", component:ClienteLogadoComponent}
 ];
