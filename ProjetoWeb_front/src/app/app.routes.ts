@@ -9,6 +9,7 @@ import { BuscaComponent } from './busca/busca.component';
 import { ControleClienteComponent } from './controle-cliente/controle-cliente.component';
 import { ControleProdutoComponent } from './controle-produto/controle-produto.component';
 import { ClienteLogadoComponent } from './cliente-logado/cliente-logado.component';
+import { RedefineSenhaComponent } from './redefine-senha/redefine-senha.component';
 
 export const routes: Routes = [
     {path: "", component:VitrineComponent},
@@ -21,5 +22,6 @@ export const routes: Routes = [
     {path: "busca", component:BuscaComponent},
     {path: "controle-cliente", component:ControleClienteComponent},
     {path: "controle-produto", component:ControleProdutoComponent},
-    {path: "cliente-logado", component:ClienteLogadoComponent}
+    {path: "cliente-logado", component:ClienteLogadoComponent},
+    {path: "redefine-senha", component:RedefineSenhaComponent}
 ];
