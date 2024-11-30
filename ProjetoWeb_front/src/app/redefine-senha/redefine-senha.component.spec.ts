@@ -1,0 +1,23 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { RedefineSenhaComponent } from './redefine-senha.component';
+
+describe('RedefineSenhaComponent', () => {
+  let component: RedefineSenhaComponent;
+  let fixture: ComponentFixture<RedefineSenhaComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [RedefineSenhaComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(RedefineSenhaComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

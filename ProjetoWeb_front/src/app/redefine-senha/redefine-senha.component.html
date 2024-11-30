@@ -1,0 +1,15 @@
+<div class="redefinir">
+    <div class="formulario">
+        <h2>Redefina sua senha</h2>
+        <b class="mensagem">{{mensagem}}</b>
+
+        <form>
+            <div class="inputs">
+                <label for="password">Nova Senha: </label>
+                <input type="password" id="password" [(ngModel)]="novaSenha" name="novaSenha">
+            </div>
+
+            <button type="submit" class="botao-redefine" (click)="redefinir()">Redefinir</button>
+        </form>
+    </div>
+</div>
