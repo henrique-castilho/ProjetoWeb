@@ -15,7 +15,7 @@
             <td>{{x.produto.nome}}</td>
             <td>{{x.quantidade}}</td>
             <td>{{x.produto.valor | currency: 'BRL':'symbol':'1.2-2'}}</td>
-            <td>{{x.valor | currency: 'BRL':'symbol':'1.2-2'}}</td>
+            <td>{{x.quantidade * x.produto.valor | currency: 'BRL':'symbol':'1.2-2'}}</td>
             <td><button class="delete-btn" (click)="excluiItens(x)">x</button></td>
         </tr>
         <tr>
@@ -23,6 +23,6 @@
             <td colspan="2">{{cesta.total | currency: 'BRL':'symbol':'1.2-2'}}</td>
         </tr>
     </table>
-    <button (click)="esvaziaCarrinho()">Esvaziar</button>
-    <button class="finalizar">Finalizar Compra</button>
+    <button (click)="limpar()">Esvaziar</button>
+    <button class="finalizar" (click)="gravarPedido()">Salvar compra</button>
 </div>
